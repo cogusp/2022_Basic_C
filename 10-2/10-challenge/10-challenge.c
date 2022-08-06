@@ -15,10 +15,30 @@ int main(void)
 
 void input_nums(int* lotto_nums)
 {
+	for (int i = 0; i < 6; i++)
+	{
+		printf("번호 입력 : ");
+		scanf("%d", lotto_nums + i);
+
+		for (int j = 0; j < i; j++)
+		{
+			if (lotto_nums[i] == lotto_nums[j])
+			{
+				printf("같은 번호가 있습니다!\n");
+				i--;
+				break;
+			}
+		}
+	}
 	
 }
 
 void print_nums(int* lotto_nums)
 {
+	printf("로또 번호 : ");
 
+	for (int i = 0; i < 6; i++)
+	{
+		printf("%d  ", lotto_nums[i]);
+	}
 }
